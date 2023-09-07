@@ -6,7 +6,7 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 14:20:12 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/07 14:38:43 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/07 15:04:27 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,19 @@ int	main(int argc, char **argv)
 	t_list	*b;
 
 	if (argc == 1)
-		return (ft_msg_err("No parameters added", 1));
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	a = NULL;
 	b = NULL;
 	if (!ft_get_input(&a, argv))
 	{
 		ft_free_list(a);
-		return (ft_msg_err("Error loading values", 1));
+		write(2, "Error\n", 6);
+		return (1);
 	}
 	ft_sort(&a, &b);
 	ft_free_list(a);
+	return (0);
 }
