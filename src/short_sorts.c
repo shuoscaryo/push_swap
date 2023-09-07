@@ -6,7 +6,7 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 17:25:45 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/07 12:35:14 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/07 14:41:59 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_sort5(t_list **a, t_list **b)
 {
 	int	max_index;
 
-	if (ft_is_sorted_ascending(*b, 5))
+	if (ft_is_sorted_ascending(*a, 5))
 		return ;
 	max_index = ft_get_max_index(*a);
 	if (max_index == 4 || max_index == 3)
