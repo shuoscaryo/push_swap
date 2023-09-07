@@ -6,11 +6,13 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 17:25:45 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/02 17:29:07 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/07 12:35:14 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	ft_is_sorted_ascending(t_list *list, int size);
 
 static int	ft_get_max_index(t_list *list)
 {
@@ -53,6 +55,8 @@ void	ft_sort4(t_list **a, t_list **b)
 {
 	int	max_index;
 
+	if (ft_is_sorted_ascending(*a, 4))
+		return ;
 	max_index = ft_get_max_index(*a);
 	if (max_index == 3 || max_index == 2)
 		ft_rev_rotate(a, 0);
@@ -70,6 +74,8 @@ void	ft_sort5(t_list **a, t_list **b)
 {
 	int	max_index;
 
+	if (ft_is_sorted_ascending(*b, 5))
+		return ;
 	max_index = ft_get_max_index(*a);
 	if (max_index == 4 || max_index == 3)
 		ft_rev_rotate(a, 0);

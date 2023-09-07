@@ -6,13 +6,13 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:06:43 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/02 20:43:02 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/07 12:33:56 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	ft_is_sorted_ascending(t_list *list, int size)
+char	ft_is_sorted_ascending(t_list *list, int size)
 {
 	int	last;
 	int	i;
