@@ -6,34 +6,13 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 14:20:12 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/02 21:04:10 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/07 14:38:43 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 #include <limits.h>
-
-/*void ft_print_lst(t_list *list)
-{
-	int i = 0;
-	while (list)
-	{
-		printf("list[%d] = %d\n", i, *((int *)list->content));
-		list = list->next;
-		i++;
-	}
-}
-
-void ft_print_lists(t_list *a, t_list *b)
-{
-	printf("__________\n");
-	printf("list A:\n");
-	ft_print_lst(a);
-	printf("list B:\n");
-	ft_print_lst(b);
-	printf("__________\n");
-}*/
 
 void	ft_free_list(t_list *list)
 {
