@@ -6,7 +6,7 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 21:09:22 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/02 15:48:25 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/15 15:37:28 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ static char	ft_is_too_long(char *str)
 	long	num;
 	char	sign;
 
-	if (ft_strlen(str) > 11)
-		return (1);
 	num = 0;
 	sign = 1;
 	if (*str == '+' || *str == '-')
@@ -44,10 +42,11 @@ static char	ft_is_too_long(char *str)
 		str++;
 	}
 	while (ft_isdigit(*str))
+	{
 		num = num * 10 + *str++ - '0';
-	num *= sign;
-	if (num > INT_MAX || num < INT_MIN)
-		return (1);
+		if ((sign > 0 && num > INT_MAX) || (sign < 0 && num < INT_MIN))
+			return (1);
+	}
 	return (0);
 }
 
