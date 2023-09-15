@@ -1,0 +1,12 @@
+/*
+!.gitignore
+!include/
+!src/
+!lib/
+!checker_linux
+!checker_Mac
+!Makefile
+!subject.pdf
+**/*.o
+**/obj/
+**/*.a
