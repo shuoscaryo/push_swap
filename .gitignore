@@ -3,6 +3,7 @@
 !include/
 !src/
 !lib/
+!tester/
 !checker_linux
 !checker_Mac
 !Makefile
