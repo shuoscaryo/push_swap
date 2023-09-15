@@ -6,7 +6,7 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:06:43 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/15 15:52:12 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/15 20:54:10 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,39 @@ char	ft_is_sorted_ascending(t_list *list, int size)
 	return (1);
 }
 
-int	ft_get_pivot(t_list *list, int size)
+static void	get_sums(t_list *list, int size, int number, int sums[2])
 {
-	int	min;
-	int	max;
-	int	i;
-	int	aux;
+	int	j;
 
-	i = -1;
-	min = *(int *)list->content;
-	max = min;
-	while (++i < size)
+	j = -1;
+	ft_bzero(sums, 2 * sizeof(int));
+	while (++j < size)
 	{
-		aux = *(int *)list->content;
-		if (aux > max)
-			max = aux;
-		if (aux < min)
-			min = aux;
+		if (getval(list, 0) < number)
+			sums[0]++;
+		if (getval(list, 0) > number)
+			sums[1]++;
 		list = list->next;
 	}
-	return ((max + min) / 2);
+}
+
+int	ft_get_pivot(t_list *list, int size)
+{
+	int	sums[2];
+	int	i;
+	int	number;
+
+	i = -1;
+	while (++i < size)
+	{
+		number = getval(list, i);
+		get_sums(list, size, number, sums);
+		if (size % 2 == 1 && sums[0] == sums[1])
+			return (getval(list, i));
+		if (size % 2 == 0 && sums[0] == sums[1] + 1)
+			return (getval(list, i));
+	}
+	return (getval(list, i));
 }
 
 static int	ft_push_to_b(t_list **a, t_list **b, int size)

@@ -6,7 +6,7 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 21:09:22 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/15 15:37:28 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/15 20:48:38 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ char	ft_is_number(char *str)
 
 static char	ft_is_too_long(char *str)
 {
-	long	num;
-	char	sign;
+	long long	num;
+	char		sign;
 
 	num = 0;
 	sign = 1;
