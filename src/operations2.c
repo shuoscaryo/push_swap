@@ -6,12 +6,19 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 14:32:07 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/02 15:48:24 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/15 21:47:04 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*	ft_rotate:
+		Moves the first element of the list to the last position.
+		If rotating the A list:
+			ft_rotate(a,0);
+		If rotating B:
+			ft_rotate(b,1);
+*/
 void	ft_rotate(t_list **a, char type)
 {
 	t_list	*aux;
@@ -28,6 +35,9 @@ void	ft_rotate(t_list **a, char type)
 	ft_lstlast(*a)->next = aux;
 }
 
+/*	ft_rotate2:
+		Performs the "ft_rotate" operation on both lists at once.
+*/
 void	ft_rotate2(t_list **a, t_list **b)
 {
 	ft_rotate(a, 2);
@@ -35,6 +45,13 @@ void	ft_rotate2(t_list **a, t_list **b)
 	write (1, "rr\n", 3);
 }
 
+/*	ft_rev_rotate:
+		Moves the last element from the list to the first position.
+		If rev rotating the A list:
+			ft_rev_rotate(a,0);
+		If revrotating B:
+			ft_rev_rotate(b,1);
+*/
 void	ft_rev_rotate(t_list **a, char type)
 {
 	t_list	*aux;
@@ -52,6 +69,9 @@ void	ft_rev_rotate(t_list **a, char type)
 	aux->next = NULL;
 }
 
+/*	ft_rev_rotate2:
+		Performs "ft_rev_rotate" operation on both lists at once.
+*/
 void	ft_rev_rotate2(t_list **a, t_list **b)
 {
 	ft_rev_rotate(a, 2);
