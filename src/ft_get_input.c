@@ -6,7 +6,7 @@
 /*   By: orudek <orudek@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 21:09:22 by orudek            #+#    #+#             */
-/*   Updated: 2023/09/15 21:37:25 by orudek           ###   ########.fr       */
+/*   Updated: 2023/09/19 15:13:16 by orudek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char	ft_is_too_long(char *str)
 	while (ft_isdigit(*str))
 	{
 		num = num * 10 + *str++ - '0';
-		if ((sign > 0 && num > INT_MAX) || (sign < 0 && num < INT_MIN))
+		if ((sign > 0 && num > INT_MAX) || (sign < 0 && - num < INT_MIN))
 			return (1);
 	}
 	return (0);
@@ -139,6 +139,8 @@ char	ft_get_input(t_list **list, char **argv)
 		input = ft_split(*argv, ' ');
 		if (!input)
 			return (0);
+		if (!*input)
+			return (ft_array_free(input));
 		if (!ft_push_to_list(list, input))
 			return (ft_array_free(input));
 		ft_array_free(input);
